@@ -1,5 +1,5 @@
-const express = require("express");
-const mongoose = require("mongoose");
+import express from "express";
+import mongoose from "mongoose";
 
 const app = express();
 app.set("view engine", 'ejs');
@@ -24,7 +24,7 @@ app.get("/secret", (req, res) => {
 
 
 
-
+let port = process.env.PORT || 3000;
 app.listen(3000, () => {
-	console.log('Server running on port 3000');
+	console.log(`Server running on port ${port}`);
 })
