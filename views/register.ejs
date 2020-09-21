@@ -1,6 +1,8 @@
 <h1>Sign Up Form</h1>
 
+
 <form action="/register" method="POST">
+    <input type="hidden", name="_csrf", value="<%= csrfToken %>">
     <input type="text" name="username" placeholder="username" required>
     <input type="password" name="password" placeholder="password" required>
     <button>Submit</button>
