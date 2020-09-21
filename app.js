@@ -21,7 +21,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(sessions({
 	cookieName: "session",
 	secret: "asdlkhv9x02k4h1493098dfckzu3l5nzuuuewl2cbi2",
-	duration: 30*60*1000	//30 mins
+	duration: 30*60*1000,			//30 mins
+	activeDuration: 5 * 60 * 1000,	//5 mins
+	httpOnly: true,			 		//don't let JS code access cookies
+	secure: true,					//only set cookies over https
+	ephemeral: true 				//destroy cookies when the browser closes
 }));
 app.use(cookieParser());
 
